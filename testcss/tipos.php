@@ -16,13 +16,16 @@
 
             if($media < 5) {
                 $res = "REPROVADO";
+                $color = "#f00";
             }else if($media >= 5 || $media < 7) {
                 $res = "RECUPERAÇAO";
+                $color= "#00f";
             }else {
                 $res = "APROVADO";
+                $color ="#0f0";
             }
 
-            echo "A media entre $nota1 e $nota2:<br>Situação do Aluno: $res";
+            echo "A media entre $nota1 e $nota2:<br>Situação do Aluno: <span style='color:$color'>$res</span>";
             
         ?>
         <br>
