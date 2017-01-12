@@ -10,6 +10,7 @@
 <body>
     <div class='t'>   
         <?php
+
             $nota1 = number_format($_GET["nota1"], "1");
             $nota2 = number_format($_GET["nota2"], "1");
             $media = number_format(($nota1+$nota2)/2, "1");
@@ -34,3 +35,4 @@
     
 </body>
 </html
+
