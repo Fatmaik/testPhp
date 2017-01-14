@@ -8,26 +8,13 @@
 <body>
     <div>
         <?php
-           $num = isset($_GET["num"])?$_GET["num"]:1;
-           
-           // var pega valor de $num para fazer a subtracao
-           $i = $num;
-           // var para calcular a multiplicacao do fatorial
-           $x = 1;
+           $tab = isset($_GET["tab"])?$_GET["tab"]:1;
 
-           echo "Fatorial de $num: ";
-           do{
-               // var pega o valor de $num e subtrai 1
-               $fat = "$i x ";
-               $i--;
-               $x *= $fat;
-              
-               if($fat == 1){
-                    $fat = ($i+1)." = ";
+           echo " Taboada de : $tab<br>";
+           for ($i = 1; $i <= 10; $i++){
+               $r = $tab*$i;
+               echo "$tab x $i = $r<br>";
                }
-               echo $fat;
-            }while($i >= 1);
-            echo $x;
          ?>
         <br><br>
         <a href="javascript:history.go(-1)" class="button">Back</a>
