@@ -22,15 +22,18 @@
                     echo $i ." ";
                     $i += $inc;
                 }
-            }else if($inicio > $final) {
+            }else if($inicio === $final) {
+                echo "Numeros Iguais";
+             
+             }else if($inicio > $final) {
                 $i = $inicio;
                 while ($i >= $final) {
                     echo $i ." ";
                     $i -= $inc;
                 }
-            }   echo $i--;
-
-        ?>
+                 echo $i--;
+            }   
+         ?>
         <br><br>
         <a href="javascript:history.go(-1)" class="button">Back</a>
         
