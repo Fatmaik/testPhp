@@ -35,3 +35,7 @@ a {
     font-weight: bold;
     color: black;
 }
+
+.span {
+    border: 2px solid black;
+}
