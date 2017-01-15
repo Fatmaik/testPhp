@@ -12,12 +12,13 @@
             $num = isset($_GET["num"])?$_GET["num"]:"Entrava Vazia";
             echo "Analizando o Numero $num ...<br>";
             echo $valores = "Valores Multiplos: ";
-           
+          
             // contador de multiplos
             $contador = 0;
 
             for($n = 1; $n <= 10; $n++) {
-                // armazena inicialmente todos os multiplos
+                // armazena inicialmente todos os multiplos montrando 10 resultado
+                // escolhi 10 resultado, porque alem disso todos os multiplos sao float.
                 $inteiros = $num/$n;
                 if($inteiros == intval($inteiros)) {
                     $contador++;
@@ -33,7 +34,6 @@
             echo "<br>Total de Multiplis: $contador<br>";
             echo $resultado;
         ?>
-
 <br><br>
     <a href="javascript:history.go(-1)"class="button">Voltar</a>
     </div>
