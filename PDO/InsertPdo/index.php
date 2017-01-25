@@ -36,14 +36,21 @@
             try{
                 $pdo = new PDO($dsn, $dbuser, $dbpass);
 
-                $nome = $_POST["nome"] != ""?$_POST["nome"]:"Inforne Nome";
-                $pass = md5($_POST["pass"]) != ""?md5($_POST["pass"]):"Informe Senha";
-                $email = $_POST["email"] != ""?$_POST["email"]:"Informe Email";
+                $nome = isset($_POST["nome"])?$_POST["nome"]:"Inforne Nome";
+                $pass = md5($_POST["pass"]) != "null"?md5($_POST["pass"]):"Informe Senha";
+                $email = isset($_POST["email"])?$_POST["email"]:"Informe Email";
 
-                $sql = "INSERT INTO usuarios SET id = default, loguin = '$nome', senha = '$pass', email = '$email'";
-                $sql = $pdo->query($sql);
+                if($nome != "" and $pass != "" and $email != "") {
+                    $sql = "INSERT INTO usuarios SET id = default, loguin = '$nome', senha = '$pass', email = '$email'";
+                    $sql = $pdo->query($sql);
+                    echo "Cadasto concluido";
+                }else{
+                    echo "Campos invalidos";
+                }
 
-                echo "Cadasto concluido";
+                
+
+                
             }catch(PDOExcepition $e) {
                 echo "Fail: " . $e->getmessage();
             }
