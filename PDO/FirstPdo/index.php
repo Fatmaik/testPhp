@@ -14,13 +14,13 @@
 
             try{
                 $pdo = new PDO($dsn, $dbuser, $dbpass);
-                echo "Conexao Concluida";
+                echo "Conexao concluida";
             }catch(PDOException $e) {
                 echo "Falhou: ".$e->getMessage();
             }
+            
         ?>
-        
-    </div>
+   </div>
     
 </body>
 </html>

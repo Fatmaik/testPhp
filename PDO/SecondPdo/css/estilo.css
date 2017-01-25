@@ -5,11 +5,12 @@ body {
 }
 
 div {
+    position: relative;
     margin-top: 8%;
     margin-left: 23.5%;
     border: 1px solid gray;
     width: 990px;
-    height: 900px;
+    height: 90%;
     color: white;
     background-color: rgba(224, 224, 224, 0.5);
     font-size: 20px;
