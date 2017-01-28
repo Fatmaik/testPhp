@@ -7,9 +7,7 @@
 </form>
 <?php
     require 'conectionDb.php';
-
-    $ins = new PDO($dsn, $dbuser, $dbpass);
-
+    
     if(isset($_POST["loguin"]) && empty($_POST["loguin"]) == FALSE) {
         $name = addslashes($_POST["loguin"]);
         $pass = addslashes(md5($_POST["senha"]));
