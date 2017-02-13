@@ -1,0 +1,27 @@
+body{
+    margin: 0px;
+}
+article{
+    background-color: beige;
+    height: 800px;
+}
+#delete{
+    margin-top: 0px;
+    margin-left: 600px;
+    width: 287px;
+    height: 500px;
+    background-color: rgba(222, 222, 222, 0.5)
+
+}
+
+form{
+    padding: 10px;
+}
+p{
+    text-align:center;
+}
+#input{
+    
+    margin-left: 610px;
+    margin-top: -10px;
+}

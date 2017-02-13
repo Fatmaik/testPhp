@@ -1,0 +1,57 @@
+body{
+    margin: 0px;
+}
+
+
+#addemail{
+    margin-top: 10px;
+    margin-left: 600px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(222, 222, 222, 0.5)
+}
+form{
+    
+    padding:10px;
+}
+div{
+    margin-top: -100px;
+    margin-left: 600px;
+    width: 305px;
+    height: 320px;
+    background-color: rgba(222, 222, 222, 0.5)
+}
+
+header{
+    width: 100%;
+    height: 200px;
+    background-color: white;
+}
+#elvis{
+    margin-left: 100px;
+    margin-top: 20px;
+}
+ul{
+    float: left;
+    margin-left: 100px;
+    
+    padding: 10px;
+    
+}
+a{
+    text-decoration: none;
+    padding: 5px;
+    background-color: beige
+}
+article{
+    background-color: beige;
+    height: 800px;
+}
+p{
+    margin-top: -600px;
+    margin-left: 605px;
+}
+
+
+
+
