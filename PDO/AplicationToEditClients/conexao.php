@@ -2,7 +2,7 @@
 
 $dsn = "mysql:dbname=elvistore;host=localhost";
 $dbuser = "root";
-$dbpass = "rancid";
+$dbpass = "*********";
 
 try{
     $pdo = new PDO($dsn, $dbuser, $dbpass);
