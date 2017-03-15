@@ -44,14 +44,21 @@ class Crud{
         $query = $this->dsn->query($sel);
         return $query->fetch_all(MYSQLI_ASSOC);
     }
+    // update alterando o primeiro nome 
+    public function update($tbname) {
+        $stmt = $this->dsn->stmt_init();
+        $stmt->prepare("UPDATE $tbname SET firstName = ? WHERE id = ?");
+        $stmt->bind_param("si", $this->nome, $this->id);
+        return $stmt->execute();
+    }
+    // deletando o id informado como attr
+    public function delete($tbname, $id) {
+        $stmt = $this->dsn->stmt_init();
+        $stmt->prepare("DELETE FROM $tbname WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+    }
 
-    
-    
-    
-    
-    
-    
-    
     public function setId($id) {
         $this->id = $id;
     }
