@@ -1,16 +1,19 @@
 <?php
 require_once 'conexao.php';
 class Curso{
-    private $db;
+    private $pdo; // ira recever o retorno da conexao ao DB
 
-    public function __construct(iConexao $db) {
-        $this->db = $db->connect();
+    public function __construct(iConexao $pdo) {
+        // pdo recevendo o metodo abstrado connect que esta sendo setado na classe Conexao
+        $this->pdo = $pdo->connect();  
     }
-
-    public function select() {
+    public function selectAll() {
         $sel = "SELECT * FROM cursos";
-        $res = $this->db->query($sel);
-        $res->execute();
-        return $res->fetchAll(\PDO::FETCH_ASSOC);
+        // var query setando a query no banco por meio do $pdo
+        $query = $this->pdo->prepare($sel);
+        $query->execute();
+        // retorna uma array associativa 
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
+
 }

@@ -1,9 +1,10 @@
 <?php
 require_once 'iConexao.php';
+
 class Conexao implements iConexao{
-    private $dsn ;
-    private $dbuser ;
-    private $dbpass ;
+    private $dsn;
+    private $dbuser;
+    private $dbpass;
 
     public function __construct($dsn, $dbuser, $dbpass) {
         $this->dsn = $dsn;
@@ -12,11 +13,12 @@ class Conexao implements iConexao{
     }
     public function connect() {
         try{
-           return $pdo = new PDO($this->dsn, $this->dbuser, $this->dbpass);
+            // importante dar o return para que a classe que precise de conexao consiga conectar
+            return $pdo = new PDO($this->dsn, $this->dbuser, $this->dbpass);
+            
         }catch(PDOException $e) {
-            echo "FAIL: " . $e->getMessage();
+            echo "FAIL: " .$e->getMessage();
         }
     }
-        
-    
 }
+
