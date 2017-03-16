@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+namespace Source;
 class Curso{
     private $pdo; // ira recever o retorno da conexao ao DB
 

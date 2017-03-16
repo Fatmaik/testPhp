@@ -1,5 +1,5 @@
 <?php
-require_once 'iConexao.php';
+namespace Source;
 
 class Conexao implements iConexao{
     private $dsn;
@@ -14,7 +14,8 @@ class Conexao implements iConexao{
     public function connect() {
         try{
             // importante dar o return para que a classe que precise de conexao consiga conectar
-            return $pdo = new PDO($this->dsn, $this->dbuser, $this->dbpass);
+            // importante lembrar de por a \ antede PDO   (\PDO) ou nao ira conectar
+            return $pdo = new \PDO($this->dsn, $this->dbuser, $this->dbpass);
         }catch(PDOException $e) {
             echo "FAIL: " .$e->getMessage();
         }
