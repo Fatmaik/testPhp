@@ -1,8 +1,9 @@
 <?php
 require_once 'conexao.php';
 require_once 'classCurso.php';
+require_once 'container.php';
 
-$con = new Conexao("mysql:dbname=prog;host=localhost", "root", "rancid");
-$cur = new Curso($con);
+$con = Container::getConexao();
+$cur = Container::getCurso();
 var_dump($cur->selectAll());
 
