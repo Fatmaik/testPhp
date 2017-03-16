@@ -15,7 +15,6 @@ class Conexao implements iConexao{
         try{
             // importante dar o return para que a classe que precise de conexao consiga conectar
             return $pdo = new PDO($this->dsn, $this->dbuser, $this->dbpass);
-            
         }catch(PDOException $e) {
             echo "FAIL: " .$e->getMessage();
         }

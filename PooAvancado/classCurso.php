@@ -15,5 +15,4 @@ class Curso{
         // retorna uma array associativa 
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
-
 }
