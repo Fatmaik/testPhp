@@ -15,4 +15,26 @@ class Curso{
         // retorna uma array associativa 
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
+    public function selectId($id) {
+        $selId = "SELECT * FROM cursos WHERE id = '$id' ";
+        $query = $this->pdo->prepare($selId);
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function insert($nome, $desc) {
+        $ins = "INSERT INTO cursos (id, nome, descr) VALUES (default, '$nome', '$desc') ";
+        $query = $this->pdo->prepare($ins);
+        $query->execute();
+    }
+    public function update($id, $nome, $desc) {
+        $upd = "UPDATE cursos SET nome = '$nome', descr = '$desc' WHERE id = '$id' ";
+        $query = $this->pdo->prepare($upd);
+        $query->execute();
+    }
+    public function delete($id) {
+        $del = "DELETE FROM cursos WHERE id = '$id' ";
+        $query = $this->pdo->prepare($del);
+        $query->execute();
+    }
+
 }
