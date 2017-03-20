@@ -1,0 +1,9 @@
+{
+    // nome da aplicacao
+    "name":"son/mvc",
+    "require": {"php":">=5.6"},
+    "authors": [{
+        "name":"Dionathan de Cordova",
+        "email":"dionathan_bass@hotmail.com"
+    }]
+}
