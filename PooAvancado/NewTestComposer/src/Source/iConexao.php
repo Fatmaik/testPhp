@@ -1,5 +1,5 @@
 <?php
 namespace Source;
-interface iConn {
+interface iConexao {
     public function connect();
 }

@@ -1,6 +1,6 @@
 <?php
-namespace Sounce;
-class Conexao implements \Source\iConexao{
+namespace Source;
+class Conexao implements iConexao{
     private $dsn;
     private $dbuser;
     private $dbpass;
