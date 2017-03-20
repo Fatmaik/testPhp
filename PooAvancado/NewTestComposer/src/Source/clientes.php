@@ -17,25 +17,25 @@ class Clientes implements \Source\iCliente{
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
     public function selectId($id) {
-        $sel = "SELECT * FROM clientes WHERE id = $id ";
+        $sel = "SELECT * FROM clientes WHERE id = '$id'' ";
         $query = $this->pdo->prepare($sel);
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function insert($nome, $sobrenome,$email, $id) {
-        $ins = "INSERT INTO clientes SET nome = $nome, sobrenome = $sobrenome, email = $email WHERE id = $id";
+    public function insert($nome, $sobrenome, $email) {
+        $ins = "INSERT INTO clientes SET id = default, nome = '$nome', sobrenome = '$sobrenome', email = '$email' ";
         $query = $this->pdo->prepare($ins);
         $query->execute();
         
     }
-    public function update($nome,$sobrenome, $email, $id) {
-        $upd = "UPDATE clientes SET nome = $nome, sobrenome = $sobrenome, email = $email WHERE id = $id";
+    public function update($nome, $sobrenome, $email, $id) {
+        $upd = "UPDATE clientes SET nome = '$nome', sobrenome = '$sobrenome', email = '$email' WHERE id = '$id'";
         $query = $this->pdo->prepare($upd);
-        $query->ececute();
+        $query->execute();
         
     }
     public function delete($id) {
-        $del = "DELETE FROM clientes WHERE id = $id";
+        $del = "DELETE FROM clientes WHERE id = '$id'";
         $query = $this->pdo->prepare($del);
         $query->execute();
     }
