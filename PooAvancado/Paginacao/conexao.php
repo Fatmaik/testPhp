@@ -1,6 +1,20 @@
 <?php
-try{
-    return $pdo = new \PDO("mysql:dbname=world;host=localhost", "root", "rancid");
-}catch(PDOException $e) {
-    echo "FALHA:" . $e->getMessage();
+class Conexao{
+    private $dsn;
+    private $dbuser;
+    private $dbpass;
+
+    public function __construct($dsn, $dbuser, $dbpass) {
+        $this->dsn = $dsn;
+        $this->dbuser = $dbuser;
+        $this->dbpass = $dbpass;
+    }
+    public function connect() {
+        try{
+            return $pdo = new \PDO($this->dsn, $this->dbuser, $this->dbpass);
+            echo "conecatado";
+        }catch(PDOException $e) {
+            echo "FALHA:" . $e->getMessage();
+        }
+    }
 }
