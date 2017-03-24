@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/estilo.css">
-</head>
-<body>
-    <div>
-        <?php
-            $msg = isset($_GET["msg"])?$_GET["msg"]:"vazia";
+<?php
+class n{
+    public $n1;
+    public $n2;
 
-            echo "<span style='color: white; font-size: 70px; text-align: center;'> $msg </span><br>";
+    public function somar($n1, $n2) {
+        return $n1 + $n2;
+    }
+}
 
 
 
+class x extends n{
+    public $n1;
+    public $n2;
+    public function somar($n1, $n2) {
+        return $n1 - $n2;
+    }
+}
 
-           
-        ?>
-        <a href="http://localhost/CursoPHP/olaMundo/test.html"><button class="button">Voltar</button></a>
-    </div>
-    
-</body>
-</html>
+$xx = new n();
+echo $xx->somar(2,2);
+echo "<br>";
+
+$xxx = new x();
+echo $xxx->somar(5,6);

@@ -1,0 +1,3 @@
+1 - Calcular quantidade total de paginas
+2 - definir o limite de dados por paginas
+3 - fazer a query com limit
