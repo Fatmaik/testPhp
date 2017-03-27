@@ -13,11 +13,8 @@ function id($i) {
     $allPages = $paginas->sel(2);
     foreach($allPages as $info) {
         echo $info[$i]."<br>";
-    }
-    
+    }    
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +41,6 @@ function id($i) {
         </tr>
     </table>
 
-    
     <a href=""><?php $paginas->lin();?></a>
 </body>
 </html>

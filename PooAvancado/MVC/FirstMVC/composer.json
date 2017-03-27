@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4":{
-            "SON\\":"vendor/FMVC/",
+            "FMVC\\":"vendor/FMVC/",
             "App\\":"App/"
         }    
     }
