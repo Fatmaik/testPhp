@@ -10,7 +10,8 @@ function id($i) {
     $paginas = new Pag($conn);
     // classe Paginas chamando o metodo de SELECT no Database
    
-    $allPages = $paginas->sel(2);
+    $allPages = $paginas->selNext();
+    
     foreach($allPages as $info) {
         echo $info[$i]."<br>";
     }    
@@ -40,7 +41,10 @@ function id($i) {
             <td><?php id("Population"); ?></td>
         </tr>
     </table>
+    <!--<button type="button" value=<?php $paginas->selNext();?>>Prev</button>
+    <button type="button" value=<?php $paginas->selNext();?>>Next</button>-->
 
-    <a href=""><?php $paginas->lin();?></a>
+    <a href="/?$paginas->selNext()">Proximo</a>
+    
 </body>
 </html>
