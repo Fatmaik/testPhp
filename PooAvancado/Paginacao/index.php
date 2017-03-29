@@ -1,8 +1,8 @@
 <?php
 require_once 'pagina.php';
 require_once 'conexao.php';
-$conn = new Conexao("mysql:dbname=world;host=localhost", "root", "rancid");
-$paginas = new Pag($conn);
+
+
 function id($i) {
     // instancia da classe de conexao 
     $conn = new Conexao("mysql:dbname=world;host=localhost", "root", "rancid");
@@ -13,10 +13,17 @@ function id($i) {
     $allPages = $paginas->selNext();
     
     foreach($allPages as $info) {
+        // parametro da funcao $i, sendo ultilizado no array gerado pero foreach, para recever totos os dados do db
         echo $info[$i]."<br>";
-    }    
+    }
+    
 }
+// $conn = new Conexao("mysql:dbname=world;host=localhost", "root", "rancid");
+// // instancia da classe de paginas recebendo classe Conexao como parametro
+// $paginas = new Pag($conn);
+// $paginas->totPag();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +51,9 @@ function id($i) {
     <!--<button type="button" value=<?php $paginas->selNext();?>>Prev</button>
     <button type="button" value=<?php $paginas->selNext();?>>Next</button>-->
 
-    <a href="/?$paginas->selNext()">Proximo</a>
+    <!--<a href="/?$paginas->selNext()">Proximo</a>
+    <a href="http://localhost/login/creater_pdf/print_pdf/id/<? echo $row->id; ?>"onclick="window.open(this.href, 'child', 'scrollbars,width=1000,height=500');
+     return false">Imprimir</a>-->
     
 </body>
 </html>

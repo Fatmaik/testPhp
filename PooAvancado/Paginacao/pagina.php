@@ -15,6 +15,13 @@ class Pag{
     public function getP() {
         return $this->p;
     }
+    public function totPag() {
+        $query = $this->pdo->prepare("SELECT count(*) as c FROM city");
+        $query->execute();
+        $sel = $query->fetch();
+        $total = $sel['c'];
+        echo $paginas = $total / 30;
+    }
 
     public function selNext() {
         $this->proxima = 0;
