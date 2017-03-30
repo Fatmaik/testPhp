@@ -30,23 +30,17 @@ class Pag{
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
         $this->proxima += 10;
-        echo $p;
-        echo $pag;
+        
         
     }
     public function id($i) {
         $allPages = $this->selNext();
         foreach($allPages as $info) {
-            // parametro da funcao $i, sendo ultilizado no array gerado pero foreach,
-            // para recever totos os dados do db direto na table html
             echo $info[$i]."<br>";
         }
         
     }
     public function totPag() {
-        // $pag sera a pagina clickada no link(a)
-        // $this->setPag(1);
-        
         // $pg calcula pagina mais limite de daods para informar na tela pelo select
         $pg = 1;
         // condicao para setar valor do pg caso exista um valor no $pag
@@ -66,9 +60,7 @@ class Pag{
         for($i=0; $i<$paginas; $i++) {
             echo '<a href="./?pag='. ($i+1) . '"> ' . ($i+1) . ' </a>';
         }
-        echo $this->getPag();
-        echo $this->getP();
-
+        
     }
     
     
