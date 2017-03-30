@@ -43,7 +43,8 @@ class Pag{
         }    
     }
 
-    public function totPag() {    
+    public function totPag() {
+        
         $query = $this->pdo->prepare("SELECT count('ID') as c FROM city");
         $query->execute();
         $sel = $query->fetch();
@@ -55,9 +56,5 @@ class Pag{
         for($i=0; $i<$paginas; $i++) {
             echo '<a href="./?pag='. ($i+1) . '"> ' . ($i+1) . ' </a>';
         }
-        
-
     }
-    
-
 }
