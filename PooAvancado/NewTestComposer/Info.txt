@@ -1,1 +1,0 @@
-// tbname setado no construtor da class Conexao pode apresentar problemas
