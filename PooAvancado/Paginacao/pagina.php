@@ -28,7 +28,7 @@ class Pag{
         $p = $this->getPag();
 
         $sel = "SELECT * from city limit  $p ,30 ";
-        $query = $this->pdo->prepare($sel);
+        $query = $this->pdo->prepare($sel);    
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
         
@@ -54,7 +54,7 @@ class Pag{
         $paginas = $total / 30;
         
         for($i=0; $i<$paginas; $i++) {
-            echo '<a href="./?pag='. ($i+1) . '"> ' . ($i+1) . ' </a>';
+            echo '<a class="button" href="./?pag='. ($i+1) . '"> ' . ($i+1) . ' </a>';
         }
     }
 }
