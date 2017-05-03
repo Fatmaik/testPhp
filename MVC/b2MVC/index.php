@@ -36,24 +36,10 @@ spl_autoload_register(function ($className) {
     <div id="div"></div>
     <div id="div1"></div>
     <?php
-    $cont = new testController();
-    $cont->imprimir();
+    $cont = new HomeController();
+    $cont->index();
 
 
-    echo "<br>";
-
-    $mod = new testModels();
-    $mod->imprimir();
-
-    echo "<br>";
-
-    $oMod = new otroModel();
-    $oMod->imprimir();
-
-    echo "<br>";
-
-    $main = new Main();
-    $main->index();
     ?>
     
     

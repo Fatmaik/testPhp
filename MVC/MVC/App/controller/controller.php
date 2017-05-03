@@ -1,20 +1,6 @@
 <?php
 //Aqui importamos todas as classes que poderão ser usadas baseado nas solicitações que forem feitas.
-spl_autoload_register(function ($className) {
-    // Classe Class...
-    if(file_exists("../model/classes/".$className.".php")) {
-        require_once "../model/classes/".$className.".php";
-    }
-    // Classe Connect
-    if(file_exists("../model/connect/".$className.".php")) {
-        require_once "../model/connect/".$className.".php";
-    }
-    //Classe View
-    if(file_exists("../view/".$className.".php")) {
-        require_once "../view/".$className.".php";
-    }
-    
-});
+
 //Armazena na variável $acao o que o sistema esta requisitando (cadastrar, autenticar, excluir, etc)
 $action = $_REQUEST["action"];
  
@@ -22,7 +8,7 @@ $action = $_REQUEST["action"];
 resposta, para ser exibida de alguma forma ao usuário*/
 switch($action){
  
-  case 'login':{
+  case 'logar':{
  
     // Se for logar, então deverão ser informados login e senha.
     //Primeiro instanciamos um objeto da classe Bean, para setar os valores informados no formulário
@@ -41,7 +27,12 @@ switch($action){
  
     /**Passaremos para o método de autenticação da DAO um objeto da classe Usuário. 
     Armazenaremos na variável $resultado o que este método retornar. */
-    $resultado = $usuarioDAO->autenticaUsuario($usuario);
+    // $resultado = $usuarioDAO->autenticaUsuario($usuario);
+    if($usuarioDAO->logar() > 0) {
+        $resultado = "true";
+    }else{
+        $resultado = "false";
+    }
  
     //Agora chamamos um método da View passando para o mesmo o que foi retornado pela DAO.
     $usuarioView->respostaAutenticacao($resultado);

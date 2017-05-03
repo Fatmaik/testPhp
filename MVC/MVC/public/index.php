@@ -1,3 +1,16 @@
+<?php
+require_once'../vendor/autoload.php'; 
+
+
+$init = new \App\Init();
+echo $init->getUrl();
+
+$con = new App\model\Connect();
+
+// $sel = new App\model\ClassCrud($con);
+// print_r($sel->listar());
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
