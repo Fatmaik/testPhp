@@ -1,22 +1,24 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Cliente;
 
-class IndexControllers {
-	private $view;
+class IndexControllers extends \Son\Controller\Action{
 	
-	public function __construct() {
-		// uma classe vazia, que ainda nao foi criada
-		$this->view = new \stdClass;
-	}
 	// metodos que seram usados pela array $route da classe Route logo acima;
 	public function index() {
 		// setando um objeto para a classe view
-		$this->view->ling = array("Java", "php"); 
-		include_once "../App/Views/Index/index.phtml"; 
+		$clienDb = new Cliente();
+		$this->view->selSb = $clienDb->fetchAll(); 
+
+		// se o parametro de render for : $this->render("index", FALSE); o template nao sera
+		// carregado pq o uso dele esta setado como FALSE;
+		$this->render("index");
 		
 	}	
 	public function empresa() {
-        include_once "../App/Views/Index/empresa.phtml";
+        $this->render("empresa");
 	}
+
+	
 }

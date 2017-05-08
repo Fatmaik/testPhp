@@ -1,6 +1,7 @@
 index.phtml
 <?php
 
-foreach($this->view->ling as $money) {
-    echo "<br>" . $money;
+foreach($this->view->selectAll() as $cliente) {
+    echo "<p>" . $cliente['id'] . "<br>" . $cliente['nome'] . "<br>" . 
+                 $cliente['email'] . "<br>" . $cliente['senha'] . "</p>";
 }
