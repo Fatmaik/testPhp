@@ -2,11 +2,12 @@
 
 namespace App\Models\Cliente;
 
-class Cliente extends \App\Conn {
+
+class Cliente {
     private $db;
 
-    public function __construct() {
-        $this->db = $this->getCon();
+    public function __construct(\PDO $db) {
+        $this->db = $db;
     }
 
     public function selectAll() {
@@ -14,5 +15,3 @@ class Cliente extends \App\Conn {
         return $query;
     }
 }
-
-/// arrrummar

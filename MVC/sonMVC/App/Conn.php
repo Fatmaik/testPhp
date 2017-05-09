@@ -2,11 +2,11 @@
 
 namespace App;
 
-abstract class Conn {
+class Conn {
 
-    protected static function getCon() {
+    public static function getCon() {
         try{
-            return new \PDO("mysql:dbname=MVC;host=localhost");
+            return new \PDO("mysql:dbname=MVC;host=localhost", "root", "rancid");
         }catch(PDOException $e) {
             echo "Connection Fail: " . $e->getMessage();
         }
