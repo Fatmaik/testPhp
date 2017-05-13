@@ -7,14 +7,10 @@ spl_autoload_register(function ($className) {
     if(file_exists("models/".$className.".php")) {
         require_once "models/".$className.".php";
     }
-    if(file_exists("main/".$className.".php")) {
-        require_once "main/".$className.".php";
-    }
-    
-    
+    if(file_exists("core/".$className.".php")) {
+        require_once "core/".$className.".php";
+    } 
 });
-
-
 ?>
 <html lang="en">
 <head>
@@ -36,8 +32,8 @@ spl_autoload_register(function ($className) {
     <div id="div"></div>
     <div id="div1"></div>
     <?php
-    $cont = new HomeController();
-    $cont->index();
+    $cont = new Core();
+    $cont->run();
 
 
     ?>

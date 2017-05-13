@@ -1,0 +1,1 @@
+<h1>Teste de Views <?php echo $nome ?></h1>
