@@ -1,9 +1,11 @@
 index.phtml
-<?php
 
-foreach($this->view->selectAll() as $cliente) {
-    echo "<p>" . $cliente['id'] . "<br>" . $cliente['nome'] . "<br>" . 
-                 $cliente['email'] . "<br>" . $cliente['senha'] . "</p>";
-}
 
-echo "test";
+<?php foreach($this->view->clientes as $cliente): ?>
+
+    <p><?php  $cliente['id'] ?> </p>
+    <p><?php $cliente['login'] ?> </p> 
+    <p><?php $cliente['email'] ?> </p>
+    <p><?php  $cliente['senha'] ?> </p>
+
+<?php endforeach ?>

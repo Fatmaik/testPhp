@@ -1,17 +1,9 @@
 <?php
+namespace App\Models;
 
-namespace App\Models\Cliente;
+use Son\Model\Table;
 
+class Client extends Table{
 
-class Cliente {
-    private $db;
-
-    public function __construct(\PDO $db) {
-        $this->db = $db;
-    }
-
-    public function selectAll() {
-        $query = $this->db->prepare("SELECT * FROM MVC1");
-        return $query;
-    }
+    protected $table = "MVC1";
 }

@@ -1,15 +1,16 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\Cliente;
+
 use Son\Controller\Action;
-use App\Conn;
+use Son\DI\Container;
+
 class IndexControllers extends Action{
 	
 	// metodos que seram usados pela array $route da classe Route logo acima;
 	public function index() {
 		// setando um objeto para a classe view
-		$clienDb = new Cliente(Conn::getCon());
+		$client = Container::getModel("MVC1");
 		$this->view->selSb = $clienDb->selectAll(); 
 
 		// se o parametro de render for : $this->render("index", FALSE); o template nao sera

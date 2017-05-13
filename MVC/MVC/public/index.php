@@ -2,11 +2,8 @@
 require_once'../vendor/autoload.php'; 
 
 
-$init = new \App\Init();
-echo $init->getUrl();
-
-$con = new App\model\Connect();
-
+$init = new \App\Init;
+$init->run();
 // $sel = new App\model\ClassCrud($con);
 // print_r($sel->listar());
 
