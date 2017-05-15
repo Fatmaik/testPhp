@@ -4,10 +4,10 @@ class TestController extends Controller {
 
         // acessar na url o controller test, fara com que seja acessado este index
         public function index() {
-            echo "teste teste teste";
+            $this->loadTemplate("Test");
         }
         // acessar test/aa ira retornar este metodo
-        public function aa() {
-            echo "aaa";
+        public function aa($url) {
+            echo "aaa = " . $url;
         }
 }

@@ -7,6 +7,8 @@ class Core{
         // $url sera oque estiver depois de index.php
         $url = end($url);
     
+        // params ira armazenar os parametro de url amigaveis para consultas futuras
+        $params = array();
         if(!empty($url)) {
             // precisa usar explide novamente para retirar a / do controller
             $url = explode("/", $url);
@@ -16,23 +18,30 @@ class Core{
             // classes do Controller possuem a palavra Controller no fim.
             $currentController = $url[0]."Controller";
             
+            // apos pegar o controller , a url deleta para armazenar o parametro para o array $params
+            array_shift($url);
+
             // se for acessado algun diretorio da aplicacao $url recebe [1]
-            if(isset($url[1])) {
-                $currentAction = $url[1];
+            if(isset($url[0])) {
+                $currentAction = $url[0];
+                // apos pegar a action , a url deleta para armazenar o parametro para o array $params
+                array_shift($url);
             }else {
                 $currentAction = "index";
+            }
+            if(count($url) > 0) {
+                $params = $url;
             }
         }else{
             $currentController = "HomeController";
             $currentAction     = "index";
         }
-        // chamando o core
         require_once "core/Controller.php";
 
         // chamando o controller atual
         $c = new $currentController();
-        // chamando a action atual
-        $c->$currentAction();
+        // chamando a action atual e parametros da url amigavel,caso exista algum
+        call_user_func_array(array($c, $currentAction), $params);
 
     }
 }

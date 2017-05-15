@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+require_once 'Config.php';
 spl_autoload_register(function ($className) {
     if(file_exists("controllers/".$className.".php")) {
         require_once "controllers/".$className.".php";
@@ -34,8 +35,6 @@ spl_autoload_register(function ($className) {
     <?php
     $cont = new Core();
     $cont->run();
-
-
     ?>
     
     

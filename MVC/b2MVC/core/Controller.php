@@ -8,4 +8,8 @@ class Controller {
         extract($viewData);
         include "views/".$viewName.".php";
     }
+    // metodo para carregar um template
+    public function loadTemplate($viewName, $viewData = array()) {
+        include "views/Template.php";
+    }
 }
