@@ -7,10 +7,10 @@ class Core{
         // $url sera oque estiver depois de index.php
         $url = end($url);
     
-        // params ira armazenar os parametro de url amigaveis para consultas futuras
+        // params ira armazenar os parametro de url amigaveis para consultas futuras actions
         $params = array();
         if(!empty($url)) {
-            // precisa usar explide novamente para retirar a / do controller
+            // precisa usar explode novamente para retirar a / do controller
             $url = explode("/", $url);
             // retirar espaço em branco que exite no inicio
             array_shift($url);

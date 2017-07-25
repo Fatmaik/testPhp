@@ -4,5 +4,3 @@ RewriteCond %(REQUEST_FILENAME) -1 [OR]
 RewriteCond %(REQUEST_FILENAME) -d
 RewriteRule ^.*S - [NC,L]
 RewriteRule ^(.*)$ index.php?url=$1 [NC,L]
-
-
